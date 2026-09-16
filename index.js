@@ -17,6 +17,18 @@ app.get("/contact", (req, res) => {
 app.get("/culture", (req, res) => {
   res.render("culture.ejs", { title: "Culture" });
 });
+app.get("/galerie", (req, res) => {
+  res.render("galerie.ejs", { title: "Galerie" });
+});
+app.get("/geographie", (req, res) => {
+  res.render("geographie.ejs", { title: "Geographie" });
+});
+app.get("/histoire", (req, res) => {
+  res.render("histoire.ejs", { title: "Histoire" });
+});
+app.use((req, res) => {
+  res.status(404).render("page-404.ejs", { title: "Page non trouvée" });
+});
 app.listen(port, () => {
   console.log(` http://localhost:${port}`);
 });
